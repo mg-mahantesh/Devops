@@ -1,1 +1,146 @@
 DevOps is awesome!
+
+
+
+# Git Commands  Sheet
+
+## Basic Configuration
+# Set global username and email for commits
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+# Check current Git configuration
+git config --list
+
+# Initialize a new Git repository
+git init
+
+---
+
+### **Basic Git Commands**
+
+# Create a new Git repository in the current directory
+git init
+
+# Clone an existing repository
+git clone <repository-url>
+
+# Add all changes to the staging area
+git add .
+
+# Commit changes with a message
+git commit -m "Your commit message"
+
+# Push changes to the remote repository
+git push origin main
+
+# Pull the latest changes from the remote repository
+git pull origin main
+
+# Check the status of your working directory
+git status
+
+# View commit history
+git log
+
+# Add a remote repository
+git remote add origin https://github.com/user/repo.git
+
+# Check remote repositories
+git remote -v
+
+# Change the URL of a remote repository
+git remote set-url origin git@github.com:yourusername/repository.git
+
+### Branching
+
+# Create a new branch
+git branch branch_name
+
+# Switch to a different branch
+git checkout branch_name
+
+git switch branch_name   # Alternative command for switching branches
+
+# Create and switch to a new branch
+git checkout -b new_branch
+
+git switch -c new_branch  # Alternative command for creating and switching
+
+# List all branches
+git branch
+
+# Merge another branch into your current branch
+git merge branch_name
+
+# Delete a local branch
+git branch -d branch_name
+
+git branch -D branch_name  # Force delete (only if necessary)
+
+# Add changes to the staging area
+git add file_name       # Add a specific file
+git add .               # Add all changes in the current directory
+
+# Commit staged changes
+git commit -m "Your commit message"
+
+# View commit history
+git log                 # Show commit history
+git log --oneline       # Show a brief history
+
+# Show commit differences
+git diff                # Compare working directory with the latest commit
+git diff --staged       # Compare staged changes
+git diff branch1..branch2 # Compare two branches
+
+# Clone a repository
+git clone <repo_url>
+
+# View changes in a file before committing
+git diff file_name
+
+# Discard local changes
+git checkout -- file_name
+
+# Remove a file from Git (staged + working directory)
+git rm file_name
+
+# View commit history
+git log
+
+git log --oneline       # Compact log
+
+git log --graph --all --oneline --decorate   # Show commit tree
+git log --author="Author Name"  # Filter commits by author
+
+# View the commit history with differences
+git log -p
+
+git status  # Show current branch status
+
+# Set remote repository
+git remote add origin <repo_url>
+
+# Verify remote URL
+git remote -v
+
+# Change the branch name
+git branch -m old_branch new_branch
+
+# Delete a branch
+git branch -d branch_name
+
+# Add SSH key to SSH agent for persistent authentication
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
+
+echo "eval \$(ssh-agent -s)" >> ~/.bashrc
+
+echo "ssh-add ~/.ssh/id_rsa" >> ~/.bashrc
+
+# Restart shell to apply changes
+source ~/.bashrc
+
+# Re-attempt push (if first push failed)
+git push -u origin main
